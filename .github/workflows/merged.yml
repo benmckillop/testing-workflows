@@ -1,4 +1,4 @@
-name: Merged
+name: Merged Workflow
 
 on:
   push:
