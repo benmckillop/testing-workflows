@@ -23,23 +23,23 @@ jobs:
 #          ACTION_TYPE: 'Release'
 #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
+      - name: Create GitHub release (suffix)
+        uses: benmckillop/Versioning@feature/adding-optional-suffix-to-release-version
+        with:
+          ACTION_TYPE: 'Release'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SUFFIX: alpha
+          
       - name: Create GitHub release (empty suffix)
         uses: benmckillop/Versioning@feature/adding-optional-suffix-to-release-version
         with:
           ACTION_TYPE: 'Release'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SUFFIX: ''
+          SUFFIX:
           
       - name: Create GitHub release (empty string suffix)
         uses: benmckillop/Versioning@feature/adding-optional-suffix-to-release-version
         with:
           ACTION_TYPE: 'Release'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SUFFIX: ' '
-          
-      - name: Create GitHub release (suffix)
-        uses: benmckillop/Versioning@feature/adding-optional-suffix-to-release-version
-        with:
-          ACTION_TYPE: 'Release'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SUFFIX: 'alpha'
+          SUFFIX:
