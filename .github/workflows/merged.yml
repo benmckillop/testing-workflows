@@ -22,6 +22,7 @@ jobs:
         with:
           ACTION_TYPE: 'Release'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SUFFIX: Null
           
       - name: Create GitHub release (empty suffix)
         uses: benmckillop/Versioning@feature/adding-optional-suffix-to-release-version
