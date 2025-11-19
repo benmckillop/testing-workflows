@@ -3,6 +3,20 @@ name: Merged Workflow
 on:
   push:
     branches: [ main ]
+    
+on:
+  workflow_dispatch:
+    inputs:
+      build_configuration:
+        description: 'Which build configuration to use'
+        required: true
+        default: 'Staging'
+        type: choice
+        options:
+        - Dev
+        - Build
+        - Staging
+        - Integration
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
