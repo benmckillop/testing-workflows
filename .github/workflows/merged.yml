@@ -35,4 +35,4 @@ jobs:
         with:
           ACTION_TYPE: 'Release'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SUFFIX: 'alpha'
+          SUFFIX: "alpha"
