@@ -19,18 +19,6 @@ permissions:
   contents: read
 
 jobs:
-  build:
-    name: Deploy build to TestFlight
-    environment: release
-    runs-on: macos26
-    
-    steps:
-      - name: Add path globally
-        run: echo "/usr/local/bin" >> $GITHUB_PATH
-
-      - name: Checkout
-        uses: actions/checkout@v5
-        
   increment_version:
     name: Increment Version
     runs-on: macos-26
