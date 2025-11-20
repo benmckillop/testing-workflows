@@ -29,6 +29,12 @@ jobs:
         with:
           fetch-depth: 0
           
+      - name: Validate Pull Request Name
+        id: versioning
+        uses: Oliver-Binns/Versioning@6e0838ade416316978ece0d603b0d7cc08cd2d72
+        with:
+          ACTION_TYPE: 'Validate'
+          
       - name: Increment Version
         id: versioning
         uses: benmckillop/Versioning@feature/adding-optional-suffix-to-release-version
