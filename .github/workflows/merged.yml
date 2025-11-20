@@ -1,8 +1,6 @@
-name: Merged Workflow
+name: Manual iOS Deploy
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
     inputs:
       build_configuration:
@@ -15,21 +13,30 @@ on:
         - Build
         - Staging
         - Integration
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+    
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   build:
-    name: Increment version number
-    if: github.event.pull_request.draft == false
-    runs-on: macos-26
-    permissions:
-      contents: write
-      
+    name: Deploy build to TestFlight
+    environment: release
+    runs-on: macos26
+    
     steps:
-      - name: Create GitHub release (no suffix at all)
+      - name: Add path globally
+        run: echo "/usr/local/bin" >> $GITHUB_PATH
+
+      - name: Checkout
+        uses: actions/checkout@v5
+        
+  increment_version:
+    name: Increment Version
+    runs-on: macos-26
+    steps:
+      - name: Increment Version
+        id: versioning
         uses: benmckillop/Versioning@feature/adding-optional-suffix-to-release-version
         with:
           ACTION_TYPE: 'Release'
