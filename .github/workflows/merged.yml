@@ -10,9 +10,7 @@ on:
         type: choice
         options:
         - Dev
-        - Build
-        - Staging
-        - Integration
+        
     
 permissions:
   id-token: write
