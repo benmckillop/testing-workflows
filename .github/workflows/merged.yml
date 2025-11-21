@@ -35,4 +35,11 @@ jobs:
         with:
           ACTION_TYPE: 'Release'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SUFFIX: 'alphaa'
+          SUFFIX: 'alpha'
+          
+      - name: Increment Version
+        id: versioning
+        uses: benmckillop/Versioning@feature/adding-optional-suffix-to-release-version
+        with:
+          ACTION_TYPE: 'Release'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
