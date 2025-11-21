@@ -38,7 +38,7 @@ jobs:
           SUFFIX: 'alpha'
           
       - name: Increment Version
-        id: versioning
+        id: versioning-1
         uses: benmckillop/Versioning@feature/adding-optional-suffix-to-release-version
         with:
           ACTION_TYPE: 'Release'
