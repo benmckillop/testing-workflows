@@ -2,16 +2,7 @@ name: Manual iOS Deploy
 
 on:
   workflow_dispatch:
-    inputs:
-      build_configuration:
-        description: 'Which build configuration to use'
-        required: true
-        default: 'Staging'
-        type: choice
-        options:
-        - Dev
-        
-    
+  
 permissions:
   id-token: write
   contents: write
