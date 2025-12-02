@@ -24,6 +24,7 @@ jobs:
           fetch-depth: 0
           
           
+          
       - name: Increment Version
         id: versioning
         uses: benmckillop/Versioning@making-use-of-prerelease-flag
