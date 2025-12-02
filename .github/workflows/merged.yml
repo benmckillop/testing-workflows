@@ -23,6 +23,7 @@ jobs:
         with:
           fetch-depth: 0
           
+          
       - name: Increment Version
         id: versioning
         uses: benmckillop/Versioning@feature/adding-optional-suffix-to-release-version
