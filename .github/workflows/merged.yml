@@ -26,7 +26,7 @@ jobs:
           
       - name: Increment Version
         id: versioning
-        uses: benmckillop/Versioning@feature/making-use-of-prerelease-flag
+        uses: benmckillop/Versioning@making-use-of-prerelease-flag
         with:
           ACTION_TYPE: 'Release'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
