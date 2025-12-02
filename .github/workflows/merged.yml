@@ -26,8 +26,8 @@ jobs:
           
       - name: Increment Version
         id: versioning
-        uses: benmckillop/Versioning@feature/adding-optional-suffix-to-release-version
+        uses: benmckillop/Versioning@feature/making-use-of-prerelease-flag
         with:
           ACTION_TYPE: 'Release'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SUFFIX: 'alpha'
+          IS_PRERELEASE: true
